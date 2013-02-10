@@ -1,0 +1,20 @@
+{
+  "name": "fat-client-boilerplate",
+  "description": "Work with javascript in complete comfort.",
+  "version": "0.0.0",
+  "author": {
+    "name": "Claudio Ortolina",
+    "email": "cloud8421@gmail.com"
+  },
+  "dependencies": {
+    "grunt": "latest",
+    "grunt-hash": "latest",
+    "grunt-reload": "latest",
+    "grunt-requirejs": "latest",
+    "grunt-shell": "latest",
+    "temporary": "latest",
+    "bower": "latest",
+    "zombie": "latest",
+    "jasmine-node": "latest"
+  }
+}
