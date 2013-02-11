@@ -1,3 +1,8 @@
-require(['backbone'], function () {
-  console.log('It works!');
+define(['backbone'], function () {
+  var App = {
+    run: function () {
+      return 'It works!';
+    }
+  };
+  return App;
 });

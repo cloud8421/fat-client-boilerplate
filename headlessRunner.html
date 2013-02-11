@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+  <title>Jasmine Runner</title>
+  <script src="/src/vendor/jasmine/lib/jasmine-core/jasmine.js"></script>
+  <script src="/test/support/jasmine-console.js"></script>
+  <script src="/src/config.js"></script>
+  <script src="/src/vendor/requirejs/require.js"></script>
+</head>
+
+<body>
+  <script type="text/javascript">
+    window.reporter = new jasmine.ConsoleReporter();
+    require(['../test/test-helper']);
+  </script>
+</body>
+</html>
