@@ -5,6 +5,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-requirejs');
   grunt.loadNpmTasks('grunt-hash');
   grunt.loadNpmTasks('grunt-shell');
+  grunt.loadNpmTasks('grunt-connect');
 
   // Project configuration.
   grunt.initConfig({
@@ -19,7 +20,7 @@ module.exports = function (grunt) {
     lint: {
       grunt: ['grunt.js'],
       src:   ['src/{collections,models,regions,views}/**/*.js', 'src/*.js'],
-      test:  ['test/**/.js']
+      test:  ['test/**/*.js']
     },
     jshint: {
       options: {indent: 2},
@@ -27,7 +28,7 @@ module.exports = function (grunt) {
         globals: {define: true, require: true}
       },
       test: {
-        globals: {describe: true, require: true, it: true}
+        globals: {describe: true, require: true, it: true, jasmine: true, reporter: true}
       }
     },
     requirejs: {
@@ -56,17 +57,17 @@ module.exports = function (grunt) {
       }
     },
     shell: {
-      clean_build: {
+      'clean-build': {
         command: 'rm build/build.js build/main.min.css'
       },
-      clean_dist: {
+      'clean-dist': {
         command: 'git rm dist/*.{css,js}'
       },
       update_dist: {
         command: 'git add dist/* build/*'
       },
       jasmine: {
-        command: 'phantomjs test/support/jasmine-runner.coffee http://localhost:8000/headlessRunner.html',
+        command: 'phantomjs test/support/jasmine-runner.coffee http://localhost:8001/headlessRunner.html',
         stdout: true
       },
       zombie: {
@@ -92,9 +93,15 @@ module.exports = function (grunt) {
         files: ['grunt.js'],
         tasks: 'lint:grunt'
       },
-      javascript: {
-        files: ['src/*.js', 'src/{collections,models,regions,test,views}/**/*.js'],
+      src: {
+        files: ['src/*.js',
+                'src/{collections,models,regions,views}/**/*.js'
+        ],
         tasks: 'lint:src lint:test reload shell:jasmine shell:zombie'
+      },
+      test: {
+        files: ['test/**/*.js'],
+        tasks: 'lint:test shell:jasmine shell:zombie'
       },
       stylesheet: {
         files: ['stylesheets/*.scss'],
@@ -104,6 +111,20 @@ module.exports = function (grunt) {
     server: {
       port: 8000,
       base: '.'
+    },
+    connect: {
+      development: {
+        port: 8000,
+        base: '.'
+      },
+      test: {
+        port: 8001,
+        base: '.'
+      },
+      production: {
+        port: 8002,
+        base: '.'
+      }
     },
     reload: {
       port: 35729, // LR default
@@ -115,9 +136,8 @@ module.exports = function (grunt) {
   });
 
   // Default task
-  grunt.registerTask('default', 'lint server shell:sass-development reload shell:jasmine shell:zombie watch');
-  grunt.registerTask('dist', 'shell:clean_build shell:clean_dist shell:sass-production requirejs hash shell:update_dist');
-  grunt.registerTask('test', 'server:development shell:jasmine');
-  grunt.registerTask('integration', 'server shell:zombie');
+  grunt.registerTask('default', 'lint connect:development connect:test shell:sass-development reload shell:jasmine shell:zombie watch');
+  grunt.registerTask('dist', 'shell:clean-build shell:clean-dist shell:sass-production requirejs hash shell:update_dist');
+  grunt.registerTask('test', 'connect:test shell:jasmine shell:zombie');
 
 };
