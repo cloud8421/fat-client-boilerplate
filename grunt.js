@@ -94,7 +94,7 @@ module.exports = function (grunt) {
       },
       javascript: {
         files: ['src/*.js', 'src/{collections,models,regions,test,views}/**/*.js'],
-        tasks: 'lint:src lint:test reload shell:jasmine'
+        tasks: 'lint:src lint:test reload shell:jasmine shell:zombie'
       },
       stylesheet: {
         files: ['stylesheets/*.scss'],
@@ -115,7 +115,7 @@ module.exports = function (grunt) {
   });
 
   // Default task
-  grunt.registerTask('default', 'lint server shell:sass-development reload shell:jasmine watch');
+  grunt.registerTask('default', 'lint server shell:sass-development reload shell:jasmine shell:zombie watch');
   grunt.registerTask('dist', 'shell:clean_build shell:clean_dist shell:sass-production requirejs hash shell:update_dist');
   grunt.registerTask('test', 'server:development shell:jasmine');
   grunt.registerTask('integration', 'server shell:zombie');
