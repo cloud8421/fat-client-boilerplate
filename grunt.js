@@ -6,6 +6,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-hash');
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-connect');
+  grunt.loadTasks('tasks');
 
   // Project configuration.
   grunt.initConfig({
@@ -16,6 +17,13 @@ module.exports = function (grunt) {
         '<%= pkg.homepage ? "* " + pkg.homepage + "\n" : "" %>' +
         '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
         ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */'
+    },
+    'finalize-html': {
+      dist: {
+        src: 'index.html',
+        dest: 'dist/index.html',
+        manifest: 'dist/assets.json'
+      }
     },
     lint: {
       grunt: ['grunt.js'],
@@ -137,7 +145,7 @@ module.exports = function (grunt) {
 
   // Default task
   grunt.registerTask('default', 'lint connect:development connect:test shell:sass-development reload shell:jasmine shell:zombie watch');
-  grunt.registerTask('dist', 'shell:clean-build shell:clean-dist shell:sass-production requirejs hash shell:update_dist');
+  grunt.registerTask('dist', 'shell:clean-build shell:clean-dist shell:sass-production requirejs hash shell:update_dist finalize-html');
   grunt.registerTask('test', 'connect:test shell:jasmine shell:zombie');
 
 };
