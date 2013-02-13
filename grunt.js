@@ -5,7 +5,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-requirejs');
   grunt.loadNpmTasks('grunt-hash');
   grunt.loadNpmTasks('grunt-shell');
-  grunt.loadNpmTasks('grunt-connect');
   grunt.loadTasks('tasks');
 
   // Project configuration.
@@ -116,11 +115,7 @@ module.exports = function (grunt) {
         tasks: 'shell:sass-development reload'
       }
     },
-    server: {
-      port: 8000,
-      base: '.'
-    },
-    connect: {
+    'static-server': {
       development: {
         port: 8000,
         base: '.',
@@ -146,8 +141,8 @@ module.exports = function (grunt) {
   });
 
   // Default task
-  grunt.registerTask('default', 'lint connect:development connect:test shell:sass-development reload shell:jasmine shell:zombie watch');
+  grunt.registerTask('default', 'lint static-server:development static-server:test shell:sass-development reload shell:jasmine shell:zombie watch');
   grunt.registerTask('dist', 'shell:clean-build shell:clean-dist shell:sass-production requirejs hash shell:update_dist finalize-html');
-  grunt.registerTask('test', 'connect:test shell:jasmine shell:zombie');
+  grunt.registerTask('test', 'static-server:test shell:jasmine shell:zombie');
 
 };
