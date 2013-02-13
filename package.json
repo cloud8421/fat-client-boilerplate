@@ -17,5 +17,8 @@
     "bower": "latest",
     "zombie": "latest",
     "jasmine-node": "latest"
+  },
+  "scripts": {
+    "test": "node_modules/grunt/bin/grunt test"
   }
 }
