@@ -43,7 +43,7 @@ module.exports = function(grunt) {
     distFileContent = srcFileContent.replace(buildBlockPattern, result);
 
     fs.writeFileSync(this.data.dest, distFileContent);
-    grunt.log.write('Created the ' + this.data.dest + ' file');
+    grunt.log.success('Created the ' + this.data.dest + ' file');
   });
 
 };
