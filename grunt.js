@@ -123,15 +123,17 @@ module.exports = function (grunt) {
     connect: {
       development: {
         port: 8000,
-        base: '.'
+        base: '.',
+        runIndefinitely: false
       },
       test: {
         port: 8001,
-        base: '.'
+        base: '.',
+        runIndefinitely: false
       },
       production: {
         port: 8002,
-        base: '.'
+        base: './dist'
       }
     },
     reload: {
