@@ -5,7 +5,7 @@ A thorough boilerplate to easily work with fat client webapps. Features:
 - Require.js support (with r.js build)
 - Package management with Bower (with a manifest file to manage dependencies)
 - Sass compilation
-- Distribution files, with appended md5 sum for cache bust and asset map for integration
+- Static distribution files, with appended md5 sum for cache bust and asset map for integration (but it can be served straight from `./dist`
 - Jasmine unit testing (headless and browser)
 - Jasmine and Zombie.js integration testing (headless)
 - Livereload support (with the [livereload extension](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en)
@@ -26,3 +26,13 @@ Once you have all dependencies, you can run the following:
     $ bower install
 
 This will add all needed packages.
+
+## Usage
+
+Package management for client libraries is done through Bower. To add a new package, you can run:
+
+    $ bower install --save <package-name>
+
+This will install the package in the right directory and update `component.json`, so that if you ever need to run `bower install` again, everything will be all set.
+
+Once you've added a package, you have to edit `src/config.js` and `grunt.js` for the require.js configuration. At the moment you have to make the same change in both files, definining the new library module path, shims and dependencies (if needed).
