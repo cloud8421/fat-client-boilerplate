@@ -83,3 +83,8 @@ Running `grunt` from the project root directory is enough to launch all watchers
 ### Distribution
 
 Run `grunt dist` to have distrubution files ready under `dist`. You can use that directory as a baseline for your production setup. To test it, you can run `grunt static-server:production` and open [http://localhost:8002](http://localhost:8002).
+
+### Upcoming features
+
+- cache manifest generation
+- image management, cache bust and optimization.
