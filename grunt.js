@@ -78,7 +78,7 @@ module.exports = function (grunt) {
         stdout: true
       },
       zombie: {
-        command: './node_modules/jasmine-node/bin/jasmine-node test/integration',
+        command: '`npm bin`/jasmine-node test/integration',
         stdout: true
       },
       'sass-development': {

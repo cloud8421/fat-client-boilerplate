@@ -19,6 +19,6 @@
     "jasmine-node": "latest"
   },
   "scripts": {
-    "test": "node_modules/grunt/bin/grunt test"
+    "test": "`npm bin`/grunt test"
   }
 }
