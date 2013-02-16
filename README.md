@@ -84,6 +84,10 @@ Running `grunt` from the project root directory is enough to launch all watchers
 
 Run `grunt dist` to have distrubution files ready under `dist`. You can use that directory as a baseline for your production setup. To test it, you can run `grunt static-server:production` and open [http://localhost:8002](http://localhost:8002).
 
+### Direnv support
+
+If you use direnv for your environment variables, a `.envrc` file is added to correctly load npm bin files for you.
+
 ### Upcoming features
 
 - cache manifest generation
