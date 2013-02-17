@@ -7,11 +7,14 @@
     "email": "cloud8421@gmail.com"
   },
   "dependencies": {
-    "grunt": "latest",
+    "grunt": "0.4.0rc8",
     "grunt-hash": "latest",
-    "grunt-reload": "latest",
-    "grunt-requirejs": "latest",
-    "grunt-shell": "~0.1.4",
+    "grunt-contrib-livereload": "latest",
+    "grunt-contrib-requirejs": "latest",
+    "grunt-contrib-connect": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-regarde": "latest",
+    "grunt-shell": "latest",
     "connect": "latest",
     "temporary": "latest",
     "bower": "latest",
@@ -19,6 +22,6 @@
     "jasmine-node": "latest"
   },
   "scripts": {
-    "test": "`npm bin`/grunt test"
+    "test": "grunt test"
   }
 }
