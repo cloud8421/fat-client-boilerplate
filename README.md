@@ -20,6 +20,12 @@ All of this is possible because [Grunt](http://gruntjs.com) is awesome. Please r
 
 ## Installation
 
+You can use [Rock](https://github.com/rocktemplates/rock) to clone a fresh copy of this repository and customize it on the fly:
+
+    $ rock super-awesome-app -r cloud8421/fat-client-boilerplate
+
+This will download everything into `./super-awesome-app` (without git history), asks you for some basic data (project name, author, email - note that you can [set default values](https://github.com/rocktemplates/rock#rockconfjson)), so that you're ready to roll.
+
 This boilerplate depends on:
 
 - Node ([installation instructions](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager) - I suggest a package manager approach)
