@@ -77,6 +77,10 @@ Note that requiring your application code modules requires you to traverse back 
 
 Integration specs are executed by Jasmine-node using a headless zombie.js instance. Please refer to the `test/integration/home.spec.js` file for a boilerplate. This time, the file needs to end with `.spec.js` (so that jasmine-node picks it up).
 
+### Bonus: testem configuration
+
+[Testem](https://github.com/airportyh/testem) is a library that lets you run your tests in different browsers. The included configuration runs your unit tests using the headless runner. In addition, running `testem ci` will also include a full run of the integration suite.
+
 ### Watchers
 
 Running `grunt` from the project root directory is enough to launch all watchers. This will:
