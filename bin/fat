@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+if [ $# -eq 0 ] ; then
+  echo "Please provide a name for the project"
+  exit 1
+fi
+
+rock $1 -r cloud8421/fat-client-boilerplate
+cd $1
+npm install
+bower install
+git init
