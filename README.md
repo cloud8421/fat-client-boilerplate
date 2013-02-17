@@ -10,7 +10,7 @@ A thorough boilerplate to easily work with fat client webapps. Features:
 - Static distribution files, with appended md5 sum for cache bust and asset map for integration
 - [Jasmine](http://pivotal.github.com/jasmine/) unit testing (headless and browser)
 - Jasmine and [Zombie.js](http://zombie.labnotes.org/) integration testing (headless)
-- Livereload support (with the [livereload extension](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en)
+- Livereload support (with the [livereload extension](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en))
 - Static server on different ports (development, test, production)
 - Tailored wachers
 - [JSHint](http://www.jshint.com/) configuration
