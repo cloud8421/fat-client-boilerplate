@@ -73,7 +73,7 @@ Integration specs are executed by Jasmine-node using a headless zombie.js instan
 
 Running `grunt` from the project root directory is enough to launch all watchers. This will:
 
-- lint any file inside src or specific subfolders (see `grunt.js` for details and make sure that if you change it, you do not include the `vendor` folder);
+- lint any file inside src or specific subfolders (see `Gruntfile.js` for details and make sure that if you change it, you do not include the `vendor` folder);
 - compile `stylesheets/main.scss`
 - run two web servers, one for development [http://localhost:8000](http://localhost:8000) and one for test [http://localhost:8001](http://localhost:8001). This is done to make sure that if you use any local storage features, your development data is different from your test data.
 - rerun unit tests
