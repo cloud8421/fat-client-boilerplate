@@ -4,6 +4,10 @@
   <title>Jasmine Runner</title>
   <script src="/src/vendor/jasmine/lib/jasmine-core/jasmine.js"></script>
   <script src="/test/support/jasmine-console.js"></script>
+  <script>
+    if (location.hash === '#testem')
+    document.write('<script src="/testem.js"></'+'script>')
+  </script>
   <script src="/src/config.js"></script>
   <script src="/src/vendor/requirejs/require.js"></script>
 </head>

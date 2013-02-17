@@ -1,0 +1,8 @@
+{
+  "test_page": "headlessRunner.html",
+  "launchers": {
+    "grunt": {
+      "command": "grunt connect:test shell:zombie"
+    }
+  }
+}
