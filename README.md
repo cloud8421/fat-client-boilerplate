@@ -1,5 +1,7 @@
 # Fat client boilerplate
 
+[![Build Status](https://travis-ci.org/cloud8421/fat-client-boilerplate.png?branch=master)](https://travis-ci.org/cloud8421/fat-client-boilerplate)
+
 A thorough boilerplate to easily work with fat client webapps. Features:
 
 - [http://requirejs.org](Require.js) support (with r.js build)
