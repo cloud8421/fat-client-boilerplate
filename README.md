@@ -7,7 +7,7 @@ A thorough boilerplate to easily work with fat client webapps. Features:
 - [http://requirejs.org](Require.js) support (with r.js build)
 - Package management with [Bower](http://twitter.github.com/bower/) (with a manifest file to manage dependencies)
 - [Sass](http://sass-lang.com/) compilation
-- Static distribution files, with appended md5 sum for cache bust and asset map for integration (but it can be served straight from `./dist`
+- Static distribution files, with appended md5 sum for cache bust and asset map for integration
 - [Jasmine](http://pivotal.github.com/jasmine/) unit testing (headless and browser)
 - Jasmine and [Zombie.js](http://zombie.labnotes.org/) integration testing (headless)
 - Livereload support (with the [livereload extension](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en)
@@ -36,7 +36,7 @@ This will add all needed packages.
 
 ### Package installation
 
-Package management for client libraries is done through Bower. To add a new package, you can run:
+Package management for client libraries is done through Bower (some defaults are provided, check `component.json`). To add a new package, you can run:
 
     $ bower install --save <package-name>
 
@@ -84,7 +84,7 @@ Running `grunt` from the project root directory is enough to launch all watchers
 
 ### Distribution
 
-Run `grunt dist` to have distrubution files ready under `dist`. You can use that directory as a baseline for your production setup. To test it, you can run `grunt static-server:production` and open [http://localhost:8002](http://localhost:8002).
+Run `grunt dist` to have distrubution files ready under `dist`. You can use that directory as a baseline for your production setup. To test it, you can run `grunt connect:production` and open [http://localhost:8002](http://localhost:8002).
 
 ### Upcoming features
 
