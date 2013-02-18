@@ -20,14 +20,6 @@ module.exports = function (grunt) {
 
   // Project configuration.
   grunt.initConfig({
-    pkg: '<json:package.json>',
-    meta: {
-      banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
-        '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
-        '<%= pkg.homepage ? "* " + pkg.homepage + "\n" : "" %>' +
-        '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
-        ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */'
-    },
     'finalize-html': {
       dist: {
         src: 'index.html',
@@ -57,23 +49,12 @@ module.exports = function (grunt) {
         options: {
           baseUrl: './src',
           out: './build/build.js',
-          include: ['require-lib', 'config', 'main'],
+          include: ['vendor/requirejs/require', 'main'],
+          optimize: 'none',
           pragmasOnSave: {
             excludeJade : true
           },
-          paths: {
-            'require-lib': 'vendor/requirejs/require',
-            'jquery': 'vendor/jquery/jquery.min',
-            'underscore': 'vendor/underscore-amd/underscore-min',
-            'backbone': 'vendor/backbone-amd/backbone-min',
-            'backbone-validation': 'vendor/backbone-validation/dist/backbone-validation-amd',
-            'backbone.wreqr': 'vendor/backbone.wreqr/lib/amd/backbone.wreqr',
-            'backbone.babysitter': 'vendor/backbone.babysitter/lib/amd/backbone.babysitter',
-            'jade': 'vendor/require-jade/jade',
-            'marionette': 'vendor/marionette/lib/core/amd/backbone.marionette',
-            'rivets': 'vendor/rivets/lib/rivets.min',
-            'text': 'vendor/requirejs-text/text'
-          }
+          mainConfigFile: 'src/config.js'
         }
       }
     },

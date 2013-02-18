@@ -1,8 +1,3 @@
-define(['backbone'], function () {
-  var App = {
-    run: function () {
-      return 'It works!';
-    }
-  };
-  return App;
+require(['backbone'], function (Backbone) {
+  console.log(Backbone.VERSION);
 });
