@@ -4,7 +4,7 @@
 
 A thorough boilerplate to easily work with fat client webapps. Features:
 
-- [http://requirejs.org](Require.js) support (with r.js build)
+- [Require.js](http://requirejs.org) support (with r.js build)
 - Package management with [Bower](http://twitter.github.com/bower/) (with a manifest file to manage dependencies)
 - [Sass](http://sass-lang.com/) compilation
 - Static distribution files, with appended md5 sum for cache bust and asset map for integration
@@ -12,7 +12,7 @@ A thorough boilerplate to easily work with fat client webapps. Features:
 - Jasmine and [Zombie.js](http://zombie.labnotes.org/) integration testing (headless)
 - Livereload support (with the [livereload extension](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en))
 - Static server on different ports (development, test, production)
-- Tailored wachers
+- Tailored watchers
 - [JSHint](http://www.jshint.com/) configuration
 - [TravisCI](https://travis-ci.org/) integration
 
@@ -97,7 +97,7 @@ Running `grunt` from the project root directory is enough to launch all watchers
 
 ### Distribution
 
-Run `grunt dist` to have distrubution files ready under `dist`. You can use that directory as a baseline for your production setup. To test it, you can run `grunt connect:production` and open [http://localhost:8002](http://localhost:8002).
+Run `grunt dist` to have distribution files ready under `dist`. You can use that directory as a baseline for your production setup. To test it, you can run `grunt connect:production` and open [http://localhost:8002](http://localhost:8002).
 
 ### Upcoming features
 
