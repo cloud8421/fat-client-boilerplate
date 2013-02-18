@@ -12,6 +12,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-hash');
   grunt.loadNpmTasks('grunt-regarde');
   grunt.loadNpmTasks('grunt-shell');
@@ -68,6 +69,25 @@ module.exports = function (grunt) {
         }
       }
     },
+    sass: {
+      development: {
+        files: {
+          "build/main.css": "stylesheets/main.scss"
+        },
+        options: {
+          style: "expanded",
+          lineNumbers: true
+        }
+      },
+      production: {
+        files: {
+          "build/main.min.css": "stylesheets/main.scss"
+        },
+        options: {
+          style: "compressed"
+        }
+      },
+    },
     shell: {
       'clean-build': {
         command: 'rm build/build.js build/main.min.css'
@@ -86,18 +106,6 @@ module.exports = function (grunt) {
       },
       zombie: {
         command: '`npm bin`/jasmine-node test/integration',
-        options: {
-          stdout: true
-        }
-      },
-      'sass-development': {
-        command: 'sass -l -t expanded stylesheets/main.scss:build/main.css',
-        options: {
-          stdout: true
-        }
-      },
-      'sass-production': {
-        command: 'sass -t compressed stylesheets/main.scss:build/main.min.css',
         options: {
           stdout: true
         }
@@ -163,7 +171,7 @@ module.exports = function (grunt) {
 
   // Default task
   grunt.registerTask('test', ['connect:test', 'shell:jasmine', 'shell:zombie']);
-  grunt.registerTask('dist', ['shell:clean-build', 'shell:clean-dist', 'shell:sass-production', 'requirejs', 'hash', 'shell:update_dist', 'finalize-html']);
-  grunt.registerTask('default', ['jshint', 'livereload-start', 'connect:development', 'shell:sass-development', 'test', 'regarde']);
+  grunt.registerTask('dist', ['shell:clean-build', 'shell:clean-dist', 'sass:production', 'requirejs', 'hash', 'shell:update_dist', 'finalize-html']);
+  grunt.registerTask('default', ['jshint', 'livereload-start', 'connect:development', 'sass:development', 'test', 'regarde']);
 
 };
