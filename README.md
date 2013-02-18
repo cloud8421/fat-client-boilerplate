@@ -55,7 +55,7 @@ This will install the package in the right directory and update `component.json`
 
 Packages are installed in `src/vendor`.
 
-Once you've added a package, you have to edit `src/config.js` and `grunt.js` for the require.js configuration. At the moment you have to make the same change in both files, definining the new library module path, shims and dependencies (if needed - not all libraries behave in the same way). As a rule of thumb, check if the library you want to add has an AMD version (it can appear as a Bower search result or be a different file inside the library folder).
+Once you've added a package, you have to edit `src/config.js` for the require.js configuration. You have to define the new library module path, shims and dependencies (if needed - not all libraries behave in the same way). As a rule of thumb, check if the library you want to add has an AMD version (it can appear as a Bower search result or be a different file inside the library folder).
 
 ### Adding new files to your application code
 
