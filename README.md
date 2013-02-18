@@ -30,6 +30,8 @@ This boilerplate depends on:
 
 - Node ([installation instructions](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager) - I suggest a package manager approach)
 - Sass ([installation instructions](http://sass-lang.com/download.html))
+- Bower (installed globally): `npm install -g bower`
+- Grunt (the cli interface needs to be installed globally): `npm install grunt-cli`
 
 Once you have all dependencies, you can run the following:
 

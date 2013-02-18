@@ -15,9 +15,6 @@
     "grunt-contrib-jshint": "latest",
     "grunt-regarde": "latest",
     "grunt-shell": "latest",
-    "connect": "latest",
-    "temporary": "latest",
-    "bower": "latest",
     "zombie": "latest",
     "jasmine-node": "latest"
   },
