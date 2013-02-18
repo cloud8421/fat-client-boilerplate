@@ -36,12 +36,20 @@ module.exports = function (grunt) {
       }
     },
     jshint: {
-      grunt: ['grunt.js'],
-      src:   ['src/{collections,models,regions,views}/**/*.js', 'src/*.js'],
+      grunt: ['Gruntfile.js'],
+      src:   ['src/**/*.js', '!src/vendor/**/*.js'],
       test:  ['test/**/*.js'],
       options: {
         indent: 2,
-        globals: {describe: true, define: true, require: true, it: true, jasmine: true, reporter: true}
+        es5: true,
+        globals: {
+          describe: true,
+          define: true,
+          require: true,
+          it: true,
+          jasmine: true,
+          reporter: true
+        }
       }
     },
     requirejs: {
@@ -86,7 +94,7 @@ module.exports = function (grunt) {
         options: {
           style: "compressed"
         }
-      },
+      }
     },
     shell: {
       'clean-build': {
@@ -118,13 +126,14 @@ module.exports = function (grunt) {
     },
     regarde: {
       grunt: {
-        files: ['grunt.js'],
+        files: ['Gruntfile.js'],
         tasks: ['jshint:grunt'],
         spawn: true
       },
       src: {
         files: ['src/*.js',
-                'src/{collections,models,regions,views}/**/*.js'
+                'src/**/*.js',
+                '!src/vendor/**/*.js'
         ],
         tasks: ['jshint:src', 'jshint:test', 'livereload', 'shell:jasmine', 'shell:zombie']
       },
@@ -142,8 +151,8 @@ module.exports = function (grunt) {
       livereload: {
         options: {
           port: 35729,
-          middleware: function(connect, options) {
-            return [lrSnippet, folderMount(connect, '.')]
+          middleware: function (connect, options) {
+            return [lrSnippet, folderMount(connect, '.')];
           }
         }
       },
