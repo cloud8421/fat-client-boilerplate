@@ -113,7 +113,7 @@ module.exports = function (grunt) {
         }
       },
       zombie: {
-        command: '`npm bin`/jasmine-node test/integration',
+        command: 'jasmine-node test/integration',
         options: {
           stdout: true
         }

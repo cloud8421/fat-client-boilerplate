@@ -1,4 +1,3 @@
-var jasmine = require('jasmine-node');
 var zombie = require('zombie');
 var browser = new zombie.Browser();
 
