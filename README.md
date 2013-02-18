@@ -31,7 +31,7 @@ This boilerplate depends on:
 - Node ([installation instructions](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager) - I suggest a package manager approach)
 - Sass ([installation instructions](http://sass-lang.com/download.html))
 - Bower (installed globally): `npm install -g bower`
-- Grunt (the cli interface needs to be installed globally): `npm install grunt-cli`
+- Grunt (the cli interface needs to be installed globally): `npm install -g grunt-cli`
 - Jasmine-node (so you can run integration specs): `npm install -g jasmine-node`
 
 Once you have all dependencies, you can run the following:
