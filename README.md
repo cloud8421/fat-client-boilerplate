@@ -99,6 +99,8 @@ Running `grunt` from the project root directory is enough to launch all watchers
 
 Run `grunt dist` to have distribution files ready under `dist`. You can use that directory as a baseline for your production setup. To test it, you can run `grunt connect:production` and open [http://localhost:8002](http://localhost:8002).
 
+If you use [Heroku](http://heroku.com), you already have a `Procfile` configuration to serve the app as a static node server. You just need to follow [these instructions](https://devcenter.heroku.com/articles/nodejs#deploy-your-application-to-heroku).
+
 ### Upcoming features
 
 - cache manifest generation
