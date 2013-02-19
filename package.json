@@ -6,6 +6,10 @@
     "name": "{{author}}",
     "email": "{{email}}"
   },
+  "engines": {
+    "node": "0.8.x",
+    "npm":  "1.1.x"
+  },
   "devDependencies": {
     "grunt": "0.4.0",
     "grunt-hash": "latest",
