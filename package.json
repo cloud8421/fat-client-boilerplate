@@ -1,5 +1,5 @@
 {
-  "name": "{{name}}",
+  "name": "fat-client-boilerplate",
   "description": "Work with javascript in complete comfort.",
   "version": "0.0.0",
   "author": {
@@ -16,7 +16,8 @@
     "grunt-contrib-sass": "latest",
     "grunt-regarde": "latest",
     "grunt-shell": "latest",
-    "zombie": "latest"
+    "zombie": "latest",
+    "connect": "latest"
   },
   "scripts": {
     "test": "grunt test"
