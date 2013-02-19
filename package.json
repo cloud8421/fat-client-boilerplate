@@ -6,7 +6,7 @@
     "name": "{{author}}",
     "email": "{{email}}"
   },
-  "dependencies": {
+  "devDependencies": {
     "grunt": "0.4.0",
     "grunt-hash": "latest",
     "grunt-contrib-livereload": "latest",
@@ -16,8 +16,10 @@
     "grunt-contrib-sass": "latest",
     "grunt-regarde": "latest",
     "grunt-shell": "latest",
-    "zombie": "latest",
-    "connect": "latest"
+    "zombie": "latest"
+  },
+  "dependencies": {
+    "connect": "~2.7"
   },
   "scripts": {
     "test": "grunt test"
