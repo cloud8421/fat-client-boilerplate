@@ -13,6 +13,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-hash');
   grunt.loadNpmTasks('grunt-regarde');
   grunt.loadNpmTasks('grunt-shell');
@@ -82,10 +83,10 @@ module.exports = function (grunt) {
         command: 'rm build/build.js build/main.min.css'
       },
       'clean-dist': {
-        command: 'git rm dist/*.{css,js}'
+        command: 'git rm dist/*.{css,js} dist/images/*'
       },
       update_dist: {
-        command: 'git add dist/* build/*'
+        command: 'git add dist/* build/* dist/images/*'
       },
       jasmine: {
         command: 'phantomjs test/support/jasmine-runner.coffee http://localhost:8001/headlessRunner.html',
@@ -100,8 +101,17 @@ module.exports = function (grunt) {
         }
       }
     },
+    imagemin: {                          // Task
+      dist: {                            // Target
+        options: {                       // Target options
+          optimizationLevel: 3
+        },
+        src:  ['images/*.{png,jpg}'],
+        dest: 'dist/images'
+      }
+    },
     hash: {
-      src: ['build/*.js', 'build/main.min.css'],
+      src: ['build/*.js', 'build/main.min.css', 'build/images/*'],
       mapping: 'dist/assets.json',
       dest: 'dist/'
     },
@@ -161,7 +171,7 @@ module.exports = function (grunt) {
 
   // Default task
   grunt.registerTask('test', ['connect:test', 'shell:jasmine', 'shell:zombie']);
-  grunt.registerTask('dist', ['shell:clean-build', 'shell:clean-dist', 'sass:production', 'requirejs', 'hash', 'shell:update_dist', 'finalize-html']);
+  grunt.registerTask('dist', ['shell:clean-build', 'shell:clean-dist', 'sass:production', 'requirejs', 'imagemin', 'hash', 'shell:update_dist', 'finalize-html']);
   grunt.registerTask('default', ['jshint', 'livereload-start', 'connect:development', 'sass:development', 'test', 'regarde']);
 
 };

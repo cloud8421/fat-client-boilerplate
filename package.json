@@ -18,6 +18,7 @@
     "grunt-contrib-connect": "latest",
     "grunt-contrib-jshint": "latest",
     "grunt-contrib-sass": "latest",
+    "grunt-contrib-imagemin": "latest",
     "grunt-regarde": "latest",
     "grunt-shell": "latest",
     "zombie": "latest"

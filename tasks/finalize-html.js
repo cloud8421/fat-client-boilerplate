@@ -32,7 +32,7 @@ module.exports = function(grunt) {
     var result = Object.keys(parsedManifest).map(function (key) {
       if (key.match(/\.js$/)) {
         return '<script src="' + parsedManifest[key] + '"></script>';
-      } else {
+      } else if (key.match(/\.css/)) {
         return '<link rel="stylesheet" type="text/css" href="' + parsedManifest[key] + '">';
       }
     });
