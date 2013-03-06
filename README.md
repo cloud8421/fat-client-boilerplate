@@ -101,6 +101,15 @@ Run `grunt dist` to have distribution files ready under `dist`. You can use that
 
 If you use [Heroku](http://heroku.com), you already have a `Procfile` configuration to serve the app as a static node server. You just need to follow [these instructions](https://devcenter.heroku.com/articles/nodejs#deploy-your-application-to-heroku).
 
+If instead you want to use github pages, you can use `git subtree` (hat tip to
+[the yeoman docs](http://yeoman.io/deployment.html)):
+
+    $ git subtree push --prefix dist origin gh-pages
+
+This will push the `dist` directory to the `gh-pages` branch, which you can use
+to serve a completely static app (more information
+[here](https://help.github.com/articles/creating-project-pages-manually)).
+
 ### Upcoming features
 
 - cache manifest generation
