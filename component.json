@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "dependencies": {
     "backbone-amd": "~0.9.10",
-    "requirejs": "~2.1.4",
+    "requirejs": "~2.1.5",
     "underscore-amd": "~1.4.4",
     "jquery": "~1.9.1",
     "jasmine": "~1.3.1",
