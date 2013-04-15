@@ -2,7 +2,7 @@
   "name": "fat-client-boilerplate",
   "version": "0.0.0",
   "dependencies": {
-    "backbone-amd": "~0.9.10",
+    "backbone-amd": "~1.0.0",
     "requirejs": "~2.1.5",
     "underscore-amd": "~1.4.4",
     "jquery": "~1.9.1",
@@ -13,6 +13,6 @@
     "requirejs-text": "~2.0.5",
     "marionette": "~1.0.0-rc6",
     "backbone.babysitter": "~0.0.4",
-    "backbone.wreqr": "~0.1.1"
+    "backbone.wreqr": "~0.2.0"
   }
 }
