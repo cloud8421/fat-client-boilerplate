@@ -11,7 +11,7 @@
     "npm":  "1.1.x"
   },
   "devDependencies": {
-    "grunt": "0.4.0",
+    "grunt": "0.4.1",
     "grunt-hash": "latest",
     "grunt-contrib-livereload": "latest",
     "grunt-contrib-requirejs": "latest",
