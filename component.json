@@ -11,7 +11,7 @@
     "rivets": "~0.4.5",
     "backbone-validation": "~0.7.1",
     "requirejs-text": "~2.0.5",
-    "marionette": "~1.0.0-rc6",
+    "marionette": "~1.0.2",
     "backbone.babysitter": "~0.0.4",
     "backbone.wreqr": "~0.2.0"
   }
